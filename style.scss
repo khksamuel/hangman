@@ -21,7 +21,6 @@
     // self defined blink animation
     animation: blink 1s infinite;
   }
-
 }
 
 #keyboard {
@@ -40,6 +39,16 @@
   justify-content: center;
   gap: clamp(4px, 1.5vw, 10px);
   width: 100%;
+  .incorrect {
+    background-color: #f44336;
+    color: #fff;
+    pointer-events: none;
+  }
+  .correct {
+    background-color: #4caf50;
+    color: #fff;
+    pointer-events: none;
+  }
 }
 
 #keyboard button {

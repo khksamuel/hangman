@@ -15,6 +15,7 @@ function setupKeyboard() {
       button.addEventListener("click", () => {
         inputLetter(letter);
       });
+      button.id = `key${letter}`;
       row.appendChild(button);
     });
 
@@ -24,7 +25,14 @@ function setupKeyboard() {
 
 function renderPlaceholders(word) {
   const placeholders = document.querySelector("#placeholders");
-  placeholders.textContent = "_ ".repeat(word.length).trim();
+  // this was commented out to allow multiple spans
+  // that can be easily targeted when hit
+  // placeholders.textContent = "_ ".repeat(word.length).trim();
+  for (let i = 0; i < word.length; i++) {
+    const placeholder = document.createElement("span");
+    placeholder.textContent = "_ ";
+    placeholders.appendChild(placeholder);
+  }
 }
 
 export { setupKeyboard, renderPlaceholders };

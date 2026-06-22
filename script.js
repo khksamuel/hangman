@@ -11,4 +11,5 @@ var wordList = await fetch("./assets/example-words.json").then((response) =>
 const word = wordList[Math.floor(Math.random() * wordList.length)].toUpperCase();
 
 renderPlaceholders(word);
-
+localStorage.setItem("word", word);
+document.querySelector(".title").textContent += word;

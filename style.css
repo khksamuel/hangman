@@ -38,6 +38,16 @@
   gap: clamp(4px, 1.5vw, 10px);
   width: 100%;
 }
+.keyboard-row .incorrect {
+  background-color: #f44336;
+  color: #fff;
+  pointer-events: none;
+}
+.keyboard-row .correct {
+  background-color: #4caf50;
+  color: #fff;
+  pointer-events: none;
+}
 
 #keyboard button {
   width: clamp(28px, 8.6vw, 42px);
