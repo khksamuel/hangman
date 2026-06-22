@@ -1,5 +1,5 @@
 // import keyboard setup
-import { setupKeyboard } from "./keyboard.js";
+import { setupKeyboard, renderPlaceholders } from "./keyboard.js";
 
 setupKeyboard();
 
@@ -9,5 +9,6 @@ var wordList = await fetch("./assets/example-words.json").then((response) =>
 );
 
 const word = wordList[Math.floor(Math.random() * wordList.length)].toUpperCase();
-console.log(word);
+
+renderPlaceholders(word);
 

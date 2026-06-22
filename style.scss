@@ -17,8 +17,11 @@
   text-align: center;
   font-size: 1.5em;
   margin-top: 20px;
-  // self defined blink animation
-  animation: blink 1s infinite;
+  #placeholders {
+    // self defined blink animation
+    animation: blink 1s infinite;
+  }
+
 }
 
 #keyboard {

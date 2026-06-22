@@ -1,3 +1,4 @@
+import { inputLetter } from "./input.js";
 
 function setupKeyboard() {
   // populate the virtual keyboard in QWERTY rows
@@ -12,7 +13,7 @@ function setupKeyboard() {
       const button = document.createElement("button");
       button.textContent = letter;
       button.addEventListener("click", () => {
-        // handle letter guess
+        inputLetter(letter);
       });
       row.appendChild(button);
     });
@@ -21,4 +22,9 @@ function setupKeyboard() {
   });
 }
 
-export { setupKeyboard };
+function renderPlaceholders(word) {
+  const placeholders = document.querySelector("#placeholders");
+  placeholders.textContent = "_ ".repeat(word.length).trim();
+}
+
+export { setupKeyboard, renderPlaceholders };
