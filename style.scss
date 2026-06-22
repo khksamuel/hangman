@@ -17,9 +17,12 @@
   text-align: center;
   font-size: 1.5em;
   margin-top: 20px;
-  #placeholders {
+  .unguessed {
     // self defined blink animation
     animation: blink 1s infinite;
+  }
+  .guessed {
+    animation: none;
   }
 }
 

@@ -7,9 +7,12 @@ setupKeyboard();
 var wordList = await fetch("./assets/example-words.json").then((response) =>
   response.json(),
 );
-
 const word = wordList[Math.floor(Math.random() * wordList.length)].toUpperCase();
 
-renderPlaceholders(word);
 localStorage.setItem("word", word);
+localStorage.setItem("failedAttempts", 0);
+
+renderPlaceholders(word);
+
+
 document.querySelector(".title").textContent += word;

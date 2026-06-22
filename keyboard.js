@@ -31,6 +31,7 @@ function renderPlaceholders(word) {
   for (let i = 0; i < word.length; i++) {
     const placeholder = document.createElement("span");
     placeholder.textContent = "_ ";
+    placeholder.className = "unguessed";
     placeholders.appendChild(placeholder);
   }
 }

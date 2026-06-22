@@ -17,8 +17,11 @@
   font-size: 1.5em;
   margin-top: 20px;
 }
-#inputed-letter #placeholders {
+#inputed-letter .unguessed {
   animation: blink 1s infinite;
+}
+#inputed-letter .guessed {
+  animation: none;
 }
 
 #keyboard {
