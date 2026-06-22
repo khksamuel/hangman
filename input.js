@@ -7,9 +7,16 @@ function inputLetter(letter) {
       );
       placeholder.textContent = letter + " ";
       placeholder.classList.remove("unguessed");
-      placeholder.classList.add("inputed-letter_guessed");
       const button = document.querySelector(`#key${letter}`);
       button.classList.add("correct");
+      if (!document.querySelector(".unguessed")) {
+        // 0.5 second delay to allow the final letter to be seen before alert and reset
+        setTimeout(() => {
+          alert("Congratulations, you won!");
+          localStorage.setItem("failedAttempts", 0);
+          location.reload();
+        }, 500);
+      }
       return;
     }
   }
@@ -19,6 +26,15 @@ function inputLetter(letter) {
   localStorage.setItem("failedAttempts", failedAttempts);
   const image = document.querySelector("#hangman-image");
   image.src = `./assets/img/h-${failedAttempts}.jpg`;
+  if (failedAttempts > 9) {
+    // 0.5 second delay to allow the final image to be seen before alert and reset
+    setTimeout(() => {
+      alert(`Game over! The word was: ${word}`);
+      localStorage.setItem("failedAttempts", 0);
+      location.reload();
+    }, 500);
+    return;
+  }
 }
 
 export { inputLetter };

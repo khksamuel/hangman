@@ -13,5 +13,3 @@ localStorage.setItem("word", word);
 localStorage.setItem("failedAttempts", 0);
 
 renderPlaceholders(word);
-
-document.querySelector(".title").textContent += word;
