@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1 class="title">Hangman</h1>
+      <!-- hangman image, will be injected and replaced with js as the game progresses -->
+      <img id="hangman-image" src="./assets/img/h-0.jpg" alt="Hangman Image" />
+      <!-- inputed letter -->
+      <h1 id="inputed-letter">_</h1>
+      <!-- keyboard placeholder, will be injected with js -->
+      <div id="keyboard"></div>
+    </main>
+  </body>
+</html>
