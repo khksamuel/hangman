@@ -17,6 +17,8 @@ function inputLetter(letter) {
   button.classList.add("incorrect");
   const failedAttempts = parseInt(localStorage.getItem("failedAttempts")) + 1;
   localStorage.setItem("failedAttempts", failedAttempts);
+  const image = document.querySelector("#hangman-image");
+  image.src = `./assets/img/h-${failedAttempts}.jpg`;
 }
 
 export { inputLetter };

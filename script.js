@@ -14,5 +14,4 @@ localStorage.setItem("failedAttempts", 0);
 
 renderPlaceholders(word);
 
-
 document.querySelector(".title").textContent += word;
