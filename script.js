@@ -1,7 +1,9 @@
 // import keyboard setup
 import { setupKeyboard, renderPlaceholders } from "./keyboard.js";
+import { setKeyboardListener } from "./input.js";
 
 setupKeyboard();
+setKeyboardListener();
 
 // load word list from JSON file
 var wordList = await fetch("./assets/example-words.json").then((response) =>

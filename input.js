@@ -37,4 +37,13 @@ function inputLetter(letter) {
   }
 }
 
-export { inputLetter };
+function setKeyboardListener() {
+  document.addEventListener("keydown", (event) => {
+    const letter = event.key.toUpperCase();
+    if (letter >= "A" && letter <= "Z") {
+      inputLetter(letter);
+    }
+  });
+}
+
+export { inputLetter, setKeyboardListener };
