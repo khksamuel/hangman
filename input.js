@@ -1,8 +1,10 @@
 function inputLetter(letter) {
+  // ignore branch
   const alreadyGuessed = document.querySelector(`#key${letter}`).classList.contains("correct") ||
     document.querySelector(`#key${letter}`).classList.contains("incorrect");
   if (alreadyGuessed) return; // ignore if letter has already been guessed
-  
+
+  // found branch
   const word = localStorage.getItem("word");
   for (let i = 0; i < word.length; i++) {
     if (word[i] === letter) {
@@ -24,6 +26,8 @@ function inputLetter(letter) {
       return;
     }
   }
+
+  // not found branch
   const button = document.querySelector(`#key${letter}`);
   button.classList.add("incorrect");
   const failedAttempts = parseInt(localStorage.getItem("failedAttempts")) + 1;

@@ -30,9 +30,6 @@ function renderPlaceholders() {
   // user wont really notice this reload
   if (!word) location.reload(); 
   const placeholders = document.querySelector("#placeholders");
-  // this was commented out to allow multiple spans
-  // that can be easily targeted when hit
-  // placeholders.textContent = "_ ".repeat(word.length).trim();
   for (let i = 0; i < word.length; i++) {
     const placeholder = document.createElement("span");
     placeholder.textContent = "_ ";
