@@ -1,4 +1,8 @@
 function inputLetter(letter) {
+  const alreadyGuessed = document.querySelector(`#key${letter}`).classList.contains("correct") ||
+    document.querySelector(`#key${letter}`).classList.contains("incorrect");
+  if (alreadyGuessed) return; // ignore if letter has already been guessed
+  
   const word = localStorage.getItem("word");
   for (let i = 0; i < word.length; i++) {
     if (word[i] === letter) {
@@ -27,6 +31,8 @@ function inputLetter(letter) {
   const image = document.querySelector("#hangman-image");
   image.src = `./assets/img/h-${failedAttempts}.jpg`;
   if (failedAttempts > 9) {
+    // set manually to prevent rapid fire causing h-11... to be requested before reload
+    image.src = `./assets/img/h-10.jpg`;
     // 0.5 second delay to allow the final image to be seen before alert and reset
     setTimeout(() => {
       alert(`Game over! The word was: ${word}`);
@@ -46,4 +52,12 @@ function setKeyboardListener() {
   });
 }
 
-export { inputLetter, setKeyboardListener };
+function setCheatButton() {
+  const cheatButton = document.querySelector(".cheatbutton");
+  cheatButton.addEventListener("click", () => {
+    const word = localStorage.getItem("word");
+    cheatButton.textContent = `n ${word}`;
+  });
+}
+
+export { inputLetter, setKeyboardListener, setCheatButton };
