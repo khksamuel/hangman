@@ -23,7 +23,12 @@ function setupKeyboard() {
   });
 }
 
-function renderPlaceholders(word) {
+function renderPlaceholders() {
+  const word = localStorage.getItem("word");
+  // safety check to prevent errors if word isn't set for some reason
+  // since the placeholders are not rendered at this point
+  // user wont really notice this reload
+  if (!word) location.reload(); 
   const placeholders = document.querySelector("#placeholders");
   // this was commented out to allow multiple spans
   // that can be easily targeted when hit
