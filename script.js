@@ -1,9 +1,6 @@
 // import keyboard setup
 import { setupKeyboard, renderPlaceholders } from "./keyboard.js";
-import { setKeyboardListener } from "./input.js";
-
-setupKeyboard();
-setKeyboardListener();
+import { setKeyboardListener, setCheatButton } from "./input.js";
 
 // load word list from JSON file
 var wordList = await fetch("./assets/example-words.json").then((response) =>
@@ -14,4 +11,7 @@ const word = wordList[Math.floor(Math.random() * wordList.length)].toUpperCase()
 localStorage.setItem("word", word);
 localStorage.setItem("failedAttempts", 0);
 
-renderPlaceholders(word);
+setupKeyboard();
+setKeyboardListener();
+setCheatButton();
+renderPlaceholders();
