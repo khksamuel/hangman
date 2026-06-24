@@ -13,5 +13,5 @@ localStorage.setItem("failedAttempts", 0);
 
 setupKeyboard();
 setKeyboardListener();
-setCheatButton();
+setCheatButton(); // press the last n on the title to reveal the word, for debug
 renderPlaceholders();
